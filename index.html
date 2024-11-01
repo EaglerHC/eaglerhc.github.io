@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkyHosting - Eaglercraft Server Hosting</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #87CEEB, #4682B4);
+      color: #ffffff;
+      overflow: hidden;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar a {
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #00BFFF;
+    }
+
+    .container {
+      text-align: center;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      width: 90%;
+      max-width: 800px;
+      margin: 50px auto;
+    }
+
+    h1 {
+      font-size: 2.8em;
+      margin-bottom: 15px;
+      color: #ffffff;
+      text-shadow: 1px 1px 4px #000000;
+    }
+
+    p {
+      font-size: 1.3em;
+      margin-bottom: 30px;
+      color: #f0f8ff;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+
+    .stat {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      border-radius: 10px;
+      width: 28%;
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.2s;
+    }
+
+    .stat:hover {
+      transform: translateY(-5px);
+    }
+
+    .stat:hover .tooltip {
+      display: block;
+    }
+
+    .stat h2 {
+      font-size: 1.8em;
+      color: #ffffff;
+      text-shadow: 1px 1px 3px #000000;
+    }
+
+    .stat p {
+      font-size: 1em;
+      color: #ffffff;
+      text-shadow: 1px 1px 2px #000000;
+    }
+
+    .tooltip {
+      display: none;
+      position: absolute;
+      bottom: -45px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #ffffff;
+      padding: 8px 12px;
+      border-radius: 5px;
+      font-size: 0.9em;
+      white-space: nowrap;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .cta-button {
+      background-color: #00BFFF;
+      color: #ffffff;
+      border: none;
+      padding: 12px 30px;
+      font-size: 1.2em;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      text-shadow: 1px 1px 2px #000000;
+    }
+
+    .cta-button:hover {
+      background-color: #1E90FF;
+    }
+
+    .clouds {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .cloud {
+      position: absolute;
+      top: 0;
+      background: url('cloud.png') repeat-x;
+      opacity: 0.8;
+      animation: moveClouds 30s linear infinite;
+      height: 100px;
+      width: 200%;
+    }
+
+    @keyframes moveClouds {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+  </style>
+</head>
+<body>
+  <div class="clouds">
+    <div class="cloud"></div>
+  </div>
+  
+  <nav class="navbar">
+    <a href="#">Home</a>
+    <a href="#">Create Server</a>
+    <a href="#">Features</a>
+    <a href="#">Support</a>
+  </nav>
+
+  <div class="container">
+    <h1>Welcome to SkyHosting</h1>
+    <p>Effortlessly host your Eaglercraft servers in the cloud!</p>
+    
+    <div class="stats">
+      <div class="stat">
+        <h2>0</h2>
+        <p>Servers Hosted</p>
+        <div class="tooltip">Will add when backend is created</div>
+      </div>
+      <div class="stat">
+        <h2>0</h2>
+        <p>Active Players</p>
+        <div class="tooltip">Will add when backend is created</div>
+      </div>
+      <div class="stat">
+        <h2>0 ms</h2>
+        <p>Average Latency</p>
+        <div class="tooltip">Will add when backend is created</div>
+      </div>
+    </div>
+
+    <button class="cta-button">Get Started</button>
+  </div>
+</body>
+</html>
