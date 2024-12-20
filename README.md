@@ -1,2 +1,2 @@
 # eaglersky.github.io
-Official Frontend Testing for EaglerForge
+Official Frontend Testing for EaglerSky
