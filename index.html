@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EaglerSky - Eaglercraft Server Hosting</title>
+  <title>SkyHosting - Development Stopped</title>
   <style>
+    /* General Reset */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -12,12 +13,33 @@
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     }
 
+    /* Background Styling */
     body {
       background: linear-gradient(to bottom, #87CEEB, #4682B4);
       color: #ffffff;
-      overflow: hidden;
+      text-align: center;
       height: 100vh;
-      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* Cloud Effect */
+    .clouds {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 150px;
+      background: url('cloud.png') repeat-x;
+      animation: moveClouds 30s linear infinite;
+    }
+
+    @keyframes moveClouds {
+      from { transform: translateX(0); }
+      to { transform: translateX(-100%); }
     }
 
     /* Navigation Bar */
@@ -43,157 +65,45 @@
     .nav-button:hover {
       background-color: #f0f8ff;
     }
-    
-    .container {
-      text-align: center;
-      padding: 30px;
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-      width: 90%;
-      max-width: 800px;
-      margin: 50px auto;
-    }
 
-    h1 {
-      font-size: 2.8em;
-      margin-bottom: 15px;
-      color: #ffffff;
-      text-shadow: 1px 1px 4px #000000;
-    }
-
-    p {
-      font-size: 1.3em;
-      margin-bottom: 30px;
-      color: #f0f8ff;
-    }
-
-    .stats {
-      display: flex;
-      justify-content: space-around;
-      margin-bottom: 20px;
-    }
-
-    .stat {
-      background: rgba(255, 255, 255, 0.2);
+    /* Message Box */
+    .message-box {
       padding: 20px;
+      background: rgba(255, 255, 255, 0.2);
       border-radius: 10px;
-      width: 28%;
-      cursor: pointer;
-      position: relative;
-      transition: transform 0.2s;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      max-width: 600px;
+      width: 90%;
+      text-align: center;
+      margin-top: 20px;
     }
 
-    .stat:hover {
-      transform: translateY(-5px);
-    }
-
-    .stat:hover .tooltip {
-      display: block;
-    }
-
-    .stat h2 {
+    .message-box h2 {
       font-size: 1.8em;
       color: #ffffff;
       text-shadow: 1px 1px 3px #000000;
+      margin-bottom: 10px;
     }
 
-    .stat p {
-      font-size: 1em;
-      color: #ffffff;
-      text-shadow: 1px 1px 2px #000000;
-    }
-
-    .tooltip {
-      display: none;
-      position: absolute;
-      bottom: -45px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: rgba(0, 0, 0, 0.7);
-      color: #ffffff;
-      padding: 8px 12px;
-      border-radius: 5px;
-      font-size: 0.9em;
-      white-space: nowrap;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .cta-button {
-      background-color: #00BFFF;
-      color: #ffffff;
-      border: none;
-      padding: 12px 30px;
-      font-size: 1.2em;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: transform 0.3s;
-      text-shadow: 1px 1px 2px #000000;
-    }
-
-    .cta-button:hover {
-      transform: scale(1.1);
-    }
-
-    .clouds {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 200px;
-      overflow: hidden;
-    }
-
-    .cloud {
-      position: absolute;
-      top: 0;
-      background: url('cloud.png') repeat-x;
-      opacity: 0.8;
-      animation: moveClouds 30s linear infinite;
-      height: 100px;
-      width: 200%;
-    }
-
-    @keyframes moveClouds {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
+    .message-box p {
+      font-size: 1.1em;
+      color: #f0f8ff;
     }
   </style>
 </head>
 <body>
-  <div class="clouds">
-    <div class="cloud"></div>
-  </div>
-  
+  <div class="clouds"></div> <!-- Floating Clouds Effect -->
+
+  <!-- Navigation Buttons -->
   <div class="nav-bar">
     <a href="index.html" class="nav-button">Home</a>
-    <a href="support.html" class="nav-button">Support</a>
-    <a href="create-server.html" class="nav-button">Create Server</a>
+    <a href="donation.html" class="nav-button">Donate</a>
   </div>
 
-  <div class="container">
-    <h1>Welcome to SkyHosting</h1>
-    <p>Effortlessly host your Eaglercraft servers in the cloud!</p>
-    
-    <div class="stats">
-      <div class="stat">
-        <h2>0</h2>
-        <p>Servers Hosted</p>
-        <div class="tooltip">Will add when backend is created</div>
-      </div>
-      <div class="stat">
-        <h2>0</h2>
-        <p>Active Players</p>
-        <div class="tooltip">Will add when backend is created</div>
-      </div>
-      <div class="stat">
-        <h2>0 ms</h2>
-        <p>Average Latency</p>
-        <div class="tooltip">Will add when backend is created</div>
-      </div>
-    </div>
-
-    <button class="cta-button">Get Started</button>
+  <!-- Message Box -->
+  <div class="message-box">
+    <h2>Development Stopped</h2>
+    <p>Hello guys, this hosting development has stopped because I don't have the time, money, or self-esteem to continue working on it. I also realized that only about five people even checked out the project, and despite my efforts, I only made around $10-20 from donations (no kidding), which just isn't enough to sustain or justify working on this any further. That being said, I am giving everything away FOR FREE so that anyone can take it and build their own hosting service from it. This was supposed to be a free 24/7/365 hosting platform, and while I couldn't make it work long-term, maybe someone else can. Thank you to those who supported me on this journey.</p>
   </div>
 </body>
 </html>
