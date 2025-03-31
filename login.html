@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HidenCloud</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="theme-color" content="#d90b24"/>
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <meta name="title" content="HidenCloud Panel" />
+        <meta name="description" content="Manage your hosting environment effortlessly with our user-friendly interface and robust security measures." />
+        
+        <style>
+            :root{
+                --primary: #ea580c;
+                --successText: #e1ffd8;
+                --dangerText: #ffd8d8;
+                --secondaryText: #b2b2c1;
+                --gray900: #040519;
+            }
+            body {
+                background-color: var(--gray900);
+                color: var(--secondaryText);
+                font-family: sans-serif;
+                text-align: center;
+                padding: 20px;
+            }
+            h1 {
+                color: var(--primary);
+            }
+            .login-box {
+                background: #222;
+                padding: 20px;
+                border-radius: 10px;
+                display: inline-block;
+                margin-top: 20px;
+            }
+            input {
+                display: block;
+                width: 100%;
+                padding: 10px;
+                margin: 10px 0;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                background: #333;
+                color: white;
+            }
+            button {
+                background: var(--primary);
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                cursor: pointer;
+                border-radius: 5px;
+                margin-top: 10px;
+            }
+        </style>
+        
+        <script>
+            function showRegister() {
+                document.getElementById('login-box').innerHTML = `
+                    <h2>Register</h2>
+                    <input type="text" placeholder="Username" required>
+                    <input type="password" placeholder="Password" required>
+                    <input type="password" placeholder="Confirm Password" required>
+                    <input type="email" placeholder="Email" required>
+                    <button onclick="showMessage()">Register</button>
+                `;
+            }
+
+            function showMessage() {
+                alert("Confirmation email sent. We are still under construction, login currently unavailable.");
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Welcome to HidenCloud</h1>
+        <p>Pure frontend version - No backend dependencies.</p>
+        
+        <div class="login-box" id="login-box">
+            <h2>Login</h2>
+            <input type="text" placeholder="Username" required>
+            <input type="password" placeholder="Password" required>
+            <button>Login</button>
+        </div>
+        <br>
+        <button onclick="showRegister()">Register</button>
+    </body>
+</html>
