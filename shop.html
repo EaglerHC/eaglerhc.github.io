@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EaglerHC Pricing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            text-align: center;
+            background: linear-gradient(135deg, #0d0d2b, #161648);
+            font-family: 'Orbitron', sans-serif;
+            color: white;
+            padding: 20px;
+        }
+        .title {
+            font-size: 28px;
+            font-weight: bold;
+            text-decoration: underline;
+            margin-bottom: 20px;
+        }
+        .pricing-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .plan {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+            width: 270px;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .plan:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
+        }
+        .plan h3 {
+            font-size: 22px;
+            text-decoration: underline;
+        }
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 10px 0;
+            color: #00d4ff;
+        }
+        .features {
+            font-size: 14px;
+            margin: 10px 0;
+            line-height: 1.8;
+        }
+        .button {
+            background: #00d4ff;
+            color: black;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .button:hover {
+            background: #008cff;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <h2 class="title">EaglerHC Server Plans</h2>
+    <div class="pricing-container">
+        <div class="plan">
+            <h3>Free</h3>
+            <p class="price">$0</p>
+            <p class="features">
+                ✅ Supports - Java/Eagler/Bedrock <br>
+                ✅ Connected to Main Lobby <br>
+                ✅ 3 Servers per Account <br>
+                ✅ 10 Subusers <br>
+                ❌ 0 Orgs
+            </p>
+            <button class="button">Choose Free</button>
+        </div>
+        <div class="plan">
+            <h3>Pro</h3>
+            <p class="price">$5/mnth - $50/yr</p>
+            <p class="features">
+                ✅ Supports - Java/Eagler/Bedrock/Other Cracked Clients <br>
+                ✅ Connected to Main Lobby <br>
+                ✅ Get Own Lobby <br>
+                ✅ 7 Servers per Account <br>
+                ✅ 20 Subusers <br>
+                ✅ 1 Org
+            </p>
+            <button class="button">Choose Pro</button>
+        </div>
+        <div class="plan">
+            <h3>Super</h3>
+            <p class="price">$10/mnth - $100/yr</p>
+            <p class="features">
+                ✅ Supports - Java/Eagler/Bedrock/Other Cracked Clients <br>
+                ✅ Get Own Lobby <br>
+                ✅ 10 Servers per Account <br>
+                ✅ 30 Subusers <br>
+                ✅ 2 Orgs
+            </p>
+            <button class="button">Choose Super</button>
+        </div>
+        <div class="plan">
+            <h3>Business</h3>
+            <p class="price">$25/mnth - $250/yr</p>
+            <p class="features">
+                ✅ Supports - Java/Eagler/Bedrock <br>
+                ✅ Get Own Lobby <br>
+                ✅ ∞ Servers per Account <br>
+                ✅ ∞ Subusers <br>
+                ✅ ∞ Orgs
+            </p>
+            <button class="button">Choose Business</button>
+        </div>
+    </div>
+</body>
+</html>
