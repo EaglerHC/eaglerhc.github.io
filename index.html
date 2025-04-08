@@ -1,164 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>EaglerHC - Eaglercraft Server Hosting</title>
   <style>
-    * {
-      box-sizing: border-box;
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #141e30, #243b55);
+      color: white;
+      text-align: center;
       margin: 0;
       padding: 0;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    body {
-      background: linear-gradient(135deg, #1a1a2e, #16213e);
-      color: #ffffff;
-      overflow: hidden;
-      height: 100vh;
-      margin: 0;
-    }
-
-    /* Navigation Bar */
-    .nav-bar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 15px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      z-index: 1000;
-    }
-
-    .nav-button {
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 18px;
-      padding: 10px 20px;
-      background: rgba(0, 0, 0, 0.5);
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
-
-    .nav-button:hover {
-      background-color: #f0f8ff;
     }
 
     .container {
-      text-align: center;
-      padding: 30px;
-      background: rgba(0, 0, 0, 0.7);
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0, 255, 255, 0.5);
-      width: 90%;
       max-width: 800px;
-      margin: 50px auto;
-      position: relative;
+      margin: 0 auto;
+      padding: 40px 20px;
     }
 
     h1 {
-      font-size: 2.8em;
-      margin-bottom: 15px;
-      color: #ffffff;
-      text-shadow: 1px 1px 4px #000000;
+      font-size: 3em;
+      margin-bottom: 0.2em;
     }
 
     p {
-      font-size: 1.3em;
-      margin-bottom: 30px;
-      color: #f0f8ff;
+      font-size: 1.2em;
+      margin-bottom: 1em;
     }
 
     .stats {
       display: flex;
-      justify-content: space-around;
-      margin-bottom: 20px;
+      justify-content: center;
+      margin-top: 20px;
+      flex-wrap: wrap;
     }
 
     .stat {
-      background: rgba(255, 255, 255, 0.2);
-      padding: 20px;
-      border-radius: 10px;
-      width: 28%;
-      cursor: pointer;
-      position: relative;
-      transition: transform 0.2s;
-    }
-
-    .stat:hover {
-      transform: translateY(-5px);
-    }
-
-    .stat:hover .tooltip {
-      display: block;
+      margin: 20px;
     }
 
     .stat h2 {
-      font-size: 1.8em;
-      color: #ffffff;
-      text-shadow: 1px 1px 3px #000000;
+      font-size: 2em;
+      margin-bottom: 0.2em;
     }
 
     .stat p {
       font-size: 1em;
-      color: #ffffff;
-      text-shadow: 1px 1px 2px #000000;
+      margin: 0;
     }
 
     .tooltip {
-      display: none;
-      position: absolute;
-      bottom: -45px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: rgba(0, 0, 0, 0.7);
-      color: #ffffff;
-      padding: 8px 12px;
-      border-radius: 5px;
-      font-size: 0.9em;
-      white-space: nowrap;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      font-size: 0.8em;
+      color: #ccc;
     }
 
     .cta-button {
       background-color: #00d4ff;
       color: black;
       border: none;
-      padding: 12px 30px;
+      padding: 15px 30px;
       font-size: 1.2em;
-      border-radius: 5px;
+      margin-top: 30px;
       cursor: pointer;
-      transition: transform 0.3s;
-      text-shadow: 1px 1px 2px #000000;
+      border-radius: 8px;
+      transition: background-color 0.3s;
     }
 
     .cta-button:hover {
-      transform: scale(1.1);
-      background-color: #008cff;
+      background-color: #00a6c9;
     }
 
     #under-development {
+      margin-top: 20px;
+      color: #ffcc00;
+      font-weight: bold;
+    }
+
+    .nav-bar {
+      background-color: #0b1622;
+      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .nav-button {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      background-color: #1c2a3a;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .nav-button:hover {
+      background-color: #2e4a6f;
+    }
+
+    .pricing-summary {
+      margin-top: 40px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+    }
+
+    .go-to-shop {
+      display: inline-block;
       margin-top: 15px;
-      font-size: 14px;
-      color: yellow;
+      background-color: #00d4ff;
+      color: black;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .go-to-shop:hover {
+      background-color: #00aaff;
+    }
+
+    .about {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
     }
   </style>
 </head>
 <body>
-
   <div class="nav-bar">
     <a href="index.html" class="nav-button">Home</a>
     <a href="donate.html" class="nav-button">Support</a>
-    <a href="login.html" class="nav-button">login or register</a>
+    <a href="login.html" class="nav-button">Login / Register</a>
+    <a href="shop.html" class="nav-button">Go to Shop</a>
   </div>
 
   <div class="container">
-    <h1>Welcome to SkyHosting</h1>
+    <h1>Welcome to EaglerHC</h1>
     <p>Effortlessly host your Eaglercraft servers in the cloud!</p>
-    
+
     <div class="stats">
       <div class="stat">
         <h2>0</h2>
@@ -177,8 +160,24 @@
       </div>
     </div>
 
-    <button class="cta-button">Get Started</button>
+    <button class="cta-button" onclick="location.href='shop.html'">Get Started</button>
     <p id="under-development">Note: This site is under development.</p>
+
+
+    <div class="pricing-summary">
+      <h2>Plans Overview</h2>
+      <p><strong>Free:</strong> $0/month – 3 servers, 10 subusers</p>
+      <p><strong>Pro:</strong> $5/month – 7 servers, 20 subusers, 1 org</p>
+      <p><strong>Super:</strong> $10/month – 10 servers, 30 subusers, 2 orgs</p>
+      <p><strong>Business:</strong> $25/month – Everything unlimited</p>
+      <p><strong>View full Plans in shop</p><strong>
+      <a href="shop.html" class="go-to-shop">Choose a Plan</a>
+    </div>
+
+    <div class="about">
+      <h2>About Us</h2>
+      <p>EaglerHC, provides lightweight and easy-to-use Eaglercraft server hosting straight from your browser. Whether you're running a public server or just hosting for friends, we make it easy.</p>
+    </div>
   </div>
 </body>
 </html>
